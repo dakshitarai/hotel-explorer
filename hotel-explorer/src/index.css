@@ -1,0 +1,67 @@
+:root {
+  /* Color tokens */
+  --ink: #1c1c1e;
+  --paper: #f4efe4;
+  --paper-line: #d9cfb8;
+  --night: #16233f;
+  --night-soft: #223256;
+  --brass: #c79a3e;
+  --signal: #ab3227;
+  --signal-soft: #c2493d;
+  --teal: #2b6660;
+  --white: #fffdf8;
+
+  /* Type */
+  --font-display: 'Rajdhani', 'Arial Narrow', sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Layout */
+  --radius: 3px;
+  --max-width: 1180px;
+  --shadow-card: 0 1px 2px rgba(28, 28, 30, 0.06), 0 6px 16px rgba(28, 28, 30, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
