@@ -10,18 +10,24 @@ export default function HotelModal({ hotel, onClose }) {
     setBooked(false);
   }, [hotel]);
 
-  useEffect(() => {
-    function handleKey(e) {
-      if (e.key === 'Escape') onClose();
-    }
-    document.addEventListener('keydown', handleKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', handleKey);
-      document.body.style.overflow = '';
-    };
-  }, [onClose]);
+useEffect(() => {
+  if (!hotel) {
+    document.body.style.overflow = '';
+    return;
+  }
 
+  function handleKey(e) {
+    if (e.key === 'Escape') onClose();
+  }
+
+  document.addEventListener('keydown', handleKey);
+  document.body.style.overflow = 'hidden';
+
+  return () => {
+    document.removeEventListener('keydown', handleKey);
+    document.body.style.overflow = '';
+  };
+}, [hotel, onClose]);
   if (!hotel) return null;
 
   const photos = hotel.photos?.length ? hotel.photos : [hotel.thumbnail];
