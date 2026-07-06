@@ -6,6 +6,8 @@ An interactive hotel search app built with React + Vite, powered entirely by the
 Search by name or city, filter by price and rating range, sort results, page through
 500 listings, and open a detail view with a photo gallery and a mock reservation flow.
 
+live demo : https://hotel-explorer-uyp2.vercel.app/
+
 ## Features
 
 - **Live search** — debounced search across hotel name and location
